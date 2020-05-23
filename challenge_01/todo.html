@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Challenge One: Todo | Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main>
+        <section>
+            <h1>Todos</h1>
+            <ul class="todo-list"></ul>
+            <div class="placeholder-list">
+                <input type="checkbox" class="checkbox-list">
+                <h2 class="title">Add New Todo</h2>
+                <p class="description">What task do you have today?</p>
+            </div>
+            <div class="todo-filter">
+                <span class="counter"></span>
+                <button class="btnAll">All</button>
+                <button class="btnActive">Active</button>
+                <button class="btnComplete">Complete</button>
+            </div>
+            <form class="todo-list-form">
+                <input type="text" class="addTodo" name="addTodo" required>
+                <button class="btnAddTodo" name="btnAddTodo">+</button>
+            </form>
+        </section>
+    </main>
+    <script src="js/todo.js"></script>
+</body>
+</html>
