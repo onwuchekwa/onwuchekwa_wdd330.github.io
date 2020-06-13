@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en-us">
     <head>
-        <title>Lesson Note 7 | WDD 330</title>
+        <title>Lesson Note 8 | WDD 330</title>
         <meta charset="utf-8">
         <meta name="description" content="Portfolio portal for Sunday Ogbonnaya Onwuchekwa in WDD 330: Mobile Application Pilot at Brigham Young University - Idaho">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -24,25 +24,34 @@
 
             <main>
                 <section>
-                    <h2>WDD 330: Week Seven</h2>
+                    <h2>WDD 330: Week Eight</h2>
                     <hr>
                     <section>
                         <article>
                             <h3>Lesson Note</h3>
                             <p>
-                                Functions are flexible tool to work with in JavaScript. They have built-in properties and methods, as well as custom properties and methods. They can accept other functions as parameter and even return other function. The <code>call()</code> and <code>apply()</code> methods invokes a function with the value of <code>this</code>, which is bound to an object provided as an argument.
+                                CSS <code>Transform</code> and <code>Transition</code> properties are ways to manipulate or animate the appearance of text, images, and other objects on a webpage.  
                             </p>
 
                             <p>
-                                There are times when a webpage will need to be updated without reloading or refreshing the page. The technique to achieve this is called Ajax. The syntax to use Ajax is:
+                                With the <code>transform</code> property, objects and text on a webpage can be rotated, translated, scaled, and/or skewed. The syntax for transform is:
 <pre>
-    fetch(request)
-    .then(
-        // do something with the request
-    )
-    .catch(
-        // handle any errors
-    )
+    .image {
+        transform: rotate(10deg) translateX(40px) scale(1.5) skew(15deg, 4deg);
+    }
+</pre>
+                                The appearance of elements could be manipulated using the <code>transform</code> functions. Its property is one or more functions, separated by spaces as depicted in the above. The webpage will the render the object in the order in which they are apecified.
+                            </p>
+                            <p>
+                                CSS <code>transition</code> is used to animate objects in a webpage using animation and keyframes properties.
+                            </p>
+
+                            <p>
+                                HTML's <code>canvas</code> API allows web designers to draw anything they can imagine. This is powered by JavaScript. The Cancas API is supported by all modern browsers. The syntax to implement canvas is:
+<pre>
+    &lt;canvas id="canvasId" class="canvasClass"&gt;
+      Sorry! Your browser does not support Canvas
+    &lt;/canvas&gt;
 </pre>
                             </p>
                         </article>
@@ -50,8 +59,8 @@
                         <aside>
                             <h3>Question</h3>
                             <ul>
-                                <li>Apart from the use of recursive functions, in what other ways can a function call itself?</li>
-                                <li>What are other ways to use Ajax except using the Fetch API?</li>
+                                <li>Is it a standard practice to use CSS animation on a webpage?</li>
+                                <li>JavaScript Canvas and other image formats like JPEG, PNG, and so forth, which is preferable?</li>
                             </ul>
                         </aside>
                     </section>
