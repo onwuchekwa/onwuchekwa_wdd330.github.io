@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8" />
+        <title>Local Quakes</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="css/styles.css" />
+    </head>
+
+    <body>
+        <main>
+            <h1>Quakes Near Me</h1>
+            <fieldset>
+                <p>Start Date: <input type="date" id="startDate" value="2019-01-01"></p> 
+                <p>End Date: <input type="date" id="endDate" value="2019-03-02"></p>
+                <p>Quakes Within <select id="kmRadius" name="km_radius">
+                    <option value="200">200</option>
+                    <option value="150">150</option>
+                    <option value="100" selected>100</option>
+                    <option value="50">50</option>
+                    <option value="20">20</option>
+                    <option value="10">10</option>
+                    <option value="5">5</option>
+                </select> km</p>
+                <p><button id="btn_reload" onclick="window.location.reload();">Find Quakes</button></p>
+            </fieldset>
+            <ul id="quakeList" class="quakelist"></ul>
+        </main>
+        <script src="js/index.js" type="module"></script>
+    </body>
+</html>

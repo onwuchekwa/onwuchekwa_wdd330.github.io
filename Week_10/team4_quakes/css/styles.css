@@ -1,0 +1,73 @@
+/*
+$darkest: #353535;
+$lightest: #ffffff;
+$lightgray: #D2D7DF;
+$medtan: #BDBBB0; 
+$dktan: #8A897C;
+*/
+@import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
+
+body {
+    background-color: #353535;
+}
+main {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #BDBBB0;
+    color: #353535;
+}
+
+h1 {
+    text-align: center;
+    color: #353535;
+    font-family: 'Piedra', cursive;
+    font-size: 40px;
+}
+
+.quakelist {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #8A897C;
+}
+
+.quakelist > li:nth-child(n){
+    background-color:#D2D7DF; 
+}
+.quakelist > li:nth-child(2n){
+    background-color: #BDBBB0;
+}
+.quakelist > li {
+    padding: .5em 1em;
+}
+fieldset {
+    display:flex;
+    flex-flow: row wrap;
+    border: none;
+    margin: 0;
+    padding: 1em;
+    justify-content: center;
+    align-items: center;
+}
+fieldset p {
+    margin: .5em 0;
+    padding: 0 .5em;
+}
+fieldset p:last-child{
+    width: 100%;
+    text-align: center;
+}
+button {
+    background-color: #8A897C;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    height: 2em;
+}
+.hidden {
+    display:none;
+}
+.title {
+    font-weight: bold;
+}
