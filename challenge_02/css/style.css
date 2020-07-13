@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Share+Tech+Mono&family=Vollkorn:wght@400;700&display=swap');
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Vollkorn', serif;
+    line-height: 1.8em;
+    background-color: #fff;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #eaeaea;
+}
+
+header, footer {
+    background-color: rgba(189, 59, 189, 0.667);
+}
+
+header, main, footer {
+    margin: 0 auto;
+}
+
+.logo > a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    margin: 0 1%;
+}
+
+.logo > a > img {
+    background-color: #fff;
+    padding: 5px 25px;
+    margin-right: 10px;
+}
+
+.logo > a > h1 {
+    color: #fff;
+    font-size: 1rem;
+}
+
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    margin: 36px 2%;
+}
+
+.grid-container {
+    display: grid;
+    gap: 15px;
+    grid-gap: 15px;
+    grid-template-columns: 1fr;
+}
+
+.section-item {
+    max-width: 95%;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 10px 2%;
+}
+
+.section-header {
+    font-size: 1.3rem;
+    color: #060972;
+}
+
+fieldset {
+    border: 1px solid #000;
+    border-radius: 10px;   
+    box-sizing: border-box;
+    margin: 0 1rem 0.5rem;
+    padding: 0 1%; 
+}
+
+legend {
+    font-weight: 700; 
+    margin: 0 1rem;
+    padding: 0 .5rem;
+}
+
+.classMessage, .editMessage, .timeMessage {
+    font-size: 0.8rem;
+    text-align: left;
+    color: #a50404;
+    display: none;
+}
+
+.top {
+    display: block;
+    padding: 0.5rem;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.top input, .top select {
+    background-color: rgba(255, 255, 255, 0.6); 
+    border: 1px solid #000;
+    border-radius: 5px;   
+    box-sizing: border-box;
+    display: block;
+    font-size: .85rem;
+    padding: .75rem;
+    width: 100%;
+}
+
+.top span {
+    color: #a50404;
+}
+
+.sbs {
+    display: block;
+    padding: .5rem .75rem;
+    color: #000;
+    text-align: left;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.btnStyle, .btnTimer {
+    border: none;
+    box-sizing: border-box;
+    color: rgba(255, 255, 255, 0.8);
+    border-radius: 1rem;
+    margin: 0 2%;
+    margin-bottom: 0.5rem;
+    max-width: 20rem;  
+    padding: .75rem 1.5rem; 
+}
+
+.cls {
+    display: block;
+    padding: .5rem .75rem;
+    color: #000;
+    text-align: left;
+}
+
+.rptClassInfo {
+    font-weight: 700;
+    padding: .5rem .75rem;
+    color: #000;
+    text-align: left;
+}
+
+.btnStyle {
+    background-color: #060972;  
+    width: 70%;
+}
+
+.btnTimer {
+    background-color: #000000;  
+    width: 45%;
+}
+
+.top input:required, .top select:required {
+    border-left: 6px solid #a50404;
+}
+
+.top input:required:valid, .top select:required:valid {
+    border-left: 6px solid #004c00;
+}
+
+.emptyClass {
+    background-color: #a50404;
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 20px 0;
+    padding: 5px;
+}
+
+.view-class-list, .class-report {
+    margin: 10px 7%;
+}
+
+.view-class-list > li > a, .class-report > li {
+    text-decoration: none;
+    padding: 7px;
+}
+
+.view-class-list > li > a:hover {
+    text-decoration: underline;
+    color: #a50404;
+}
+
+.go-back {
+    background-color: #060972;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+footer {
+    font-family: 'Share Tech Mono', 'Courier New', Courier, monospace;
+    text-align: center;
+    padding: 10px;
+    color: #fff;
+}
+
+footer a {
+    color: #ffffff;
+}
+
+@media only screen and (min-width: 37.5em) {
+    .logo > a > h1 {
+        font-size: 1.5rem;
+    }
+    
+    .section-header {
+        font-size: 1.5rem;
+    }
+
+    .btnStyle {  
+        width: 45%;
+    }
+
+    .btnTimer {  
+        width: 20%;
+    }
+
+    .sbs {
+        text-align: center;
+        font-size: 3rem;
+    }
+    
+}
+
+@media only screen and (min-width: 60em) {
+    .logo > a > h1 {
+        font-size: 2rem;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}

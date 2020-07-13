@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Study TIme Tracker is an end of semester project for WDD 330: Mobile Application Pilot for Brigham Young University, Idaho. The website is to enable students track the total number of hours they spend studying a particular course.">
+    <meta name="author" content="Sunday Ogbonnaya Onwuchekwa">
+    <title>Home | Student Study Time Tracker</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">        
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/time-tracker-logo.png" alt="Study Time Tracker Logo">
+                    <h1>Student Study Time Tracker</h1>
+                </a>
+            </div>
+        </header>
+        <main>
+            <div class="grid-container">
+                <div class="register-classes">
+                    <section class="section-item">
+                        <h2 class="section-header">Add a New Class</h2>
+                        <form>
+                            <fieldset>
+                                <legend>Add a Class</legend>
+                                <label class="top" for="newClassCode">
+                                    Class Code <span class="required">*</span>
+                                    <input type="text" name="newClassCode" id="newClassCode" required placeholder="Enter Your Class Code" class="newClass">
+                                    <div class="classMessage">Class code is mandatory</div>
+                                </label>
+                                <label class="top" for="newClassName">
+                                    Class Name <span class="required">*</span>
+                                    <input type="text" name="newClassName" id="newClassName" required placeholder="Enter Your Class Name" class="newClass">
+                                    <div class="classMessage">Class name is mandatory</div>
+                                </label>                                                          
+                            </fieldset>                            
+                            <button type="button" class="btnStyle" id="addClass" name="addClass">Add my Class</button>
+                        </form>
+                    </section>
+                </div>
+                <div class="time-tracker">
+                    <section class="section-item">
+                        <h2 class="section-header">Track Study Time</h2>
+                        <form>
+                            <fieldset>
+                                <legend>Select a Class to Time</legend>
+                                <label class="top" for="timeClass">
+                                    Classes <span class="required">*</span>
+                                    <select id="timeClass" required></select>
+                                    <div class="timeMessage">You must select class code</div>                        
+                                </label>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Study Timer</legend>
+                                <button type="button" class="btnTimer" id="btnStart">Start</button>
+                                <button type="button" class="btnTimer" id="btnPause" disabled>Pause</button>
+                                <button type="button" class="btnTimer" id="btnReset" disabled>Reset</button>
+                                <button type="button" class="btnTimer" id="btnStop" disabled>Stop</button>
+                                <label class="sbs" for="studyTimer">
+                                    <span id="spHour" class="timerTicker">00</span>:<span id="spMinutes" class="timerTicker">00</span>:<span id="spSeconds" class="timerTicker">00</span>
+                                    <div class="timeMessage" id="dvTimer">You must start timer first</div>
+                                </label>                                
+                            </fieldset>                                                       
+                            <button type="button" class="btnStyle" id="btnSave" disabled>Save my Study Time</button>
+                        </form>
+                    </section>
+                </div>
+                <div class="edit-classes">
+                    <section class="section-item">
+                        <h2 class="section-header">Edit a Class</h2>
+                        <form>
+                            <fieldset>
+                                <legend>Select a Class to Edit</legend>
+                                <label class="top" for="selectClass">
+                                    Classes <span class="required">*</span>
+                                    <select id="selectClass" required></select>
+                                    <div class="editMessage">You must select class code</div>  
+                                </label>
+                            </fieldset>
+                            <fieldset id="editClassDetails">
+                                <legend>Edit a Class</legend>
+                                <label class="top" for="editClassCode">
+                                    Class Code <span class="required">*</span>
+                                    <input type="text" name="editClassCode" id="editClassCode" required placeholder="Enter Your Class Code">     
+                                    <div class="editMessage">Class code is mandatory</div>                   
+                                </label>
+                                <label class="top" for="editClassName">
+                                    Class Name <span class="required">*</span>
+                                    <input type="text" name="editClassName" id="editClassName" required placeholder="Enter Your Class Name">
+                                    <div class="editMessage">Class name is mandatory</div>
+                                </label>                                                          
+                            </fieldset>                            
+                            <button type="button" class="btnStyle" id="editClass" name="editClass">Edit my Class</button>
+                        </form>
+                    </section>
+                </div>
+                <div class="class-list">
+                    <section class="section-item">
+                        <h2 class="section-header">Class List</h2>
+                        <ul class="view-class-list"></ul>
+                    </section>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy;<span id="currentYear"></span> Student Study Time Tracker | Sunday Ogbonnaya Onwuchekwa | Accra, Ghana<br><a href="../index.html">Return to Portfolio Home Portal</a></p>
+        </footer>
+    </div>
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>

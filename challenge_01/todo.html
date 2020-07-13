@@ -11,16 +11,11 @@
         <section>
             <h1>Todos</h1>
             <ul class="todo-list"></ul>
-            <div class="placeholder-list">
-                <input type="checkbox" class="checkbox-list">
-                <h2 class="title">Add New Todo</h2>
-                <p class="description">What task do you have today?</p>
-            </div>
             <div class="todo-filter">
                 <span class="counter"></span>
-                <button class="btnAll">All</button>
-                <button class="btnActive">Active</button>
-                <button class="btnComplete">Complete</button>
+                <button class="btnAll active">All</button>
+                <button class="btnActive inActive">Active</button>
+                <button class="btnComplete inActive">Complete</button>
             </div>
             <form class="todo-list-form">
                 <input type="text" class="addTodo" name="addTodo" required>
@@ -28,6 +23,6 @@
             </form>
         </section>
     </main>
-    <script src="js/todo.js"></script>
+    <script src="js/todo.js" type="module"></script>
 </body>
 </html>

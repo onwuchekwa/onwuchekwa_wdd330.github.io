@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Study TIme Tracker is an end of semester project for WDD 330: Mobile Application Pilot for Brigham Young University, Idaho. The website is to enable students track the total number of hours they spend studying a particular course.">
+    <meta name="author" content="Sunday Ogbonnaya Onwuchekwa">
+    <title>Report | Student Study Time Tracker</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="wrapper">        
+        <header>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/time-tracker-logo.png" alt="Study Time Tracker Logo">
+                    <h1>Student Study Time Tracker</h1>
+                </a>
+            </div>
+        </header>
+        <main>
+            <button class="go-back" onclick="window.history.back()">Back to Homepage</button>
+            <div class="report-container">
+                <section class="report">
+                    <h2 class="section-header">Class Report</h2>
+                    <label class="cls" for="rptClassCode">
+                        Class Code: <span class="rptClassInfo" id="rptClassCode"></span>
+                    </label>
+                    <label class="cls" for="rptClassName">
+                        Class Name: <span class="rptClassInfo" id="rptClassName"></span>
+                    </label>
+                </section>
+                <div class="class-report"></div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy;<span id="currentYear"></span> Student Study Time Tracker | Sunday Ogbonnaya Onwuchekwa | Accra, Ghana<br><a href="../index.html">Return to Portfolio Home Portal</a></p>
+        </footer>
+    </div>
+    <script src="js/app.js" type="module"></script>
+</body>
+</html>

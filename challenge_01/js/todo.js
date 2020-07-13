@@ -1,35 +1,44 @@
-function getTodo(timeId) {
-    const data = JSON.parse(localStorage.getItem(timeId));
-    const listContainer = document.querySelector('.todo-list');
-    listContainer.insertAdjacentHTML('beforeend', `
-    <li class="item" data-key="${data.id}">
-        <input id="${data.id}" type="checkbox" >
-        <label for="${data.id}" class="tick"></label>
-        <span>${data.textValue}</span>
-        <button class="delete">X</button>
-    </li>`
-    );
-}
+import LocalStorage from './ls.js';
 
 const saveTodo = document.querySelector('.btnAddTodo');
-saveTodo.addEventListener('click', event => {
-    event.preventDefault();
-    const addTodoText = document.querySelector('.addTodo');
+const btnAll = document.querySelector('.btnAll');
+const btnActive = document.querySelector('.btnActive');
+const btnCompleted = document.querySelector('.btnComplete');
 
-    const data = addTodoText.value.trim();
+const todoList = new LocalStorage();
 
-    const timeId = new Date().getTime();
+todoList.loadTodoList();
 
-    const singleTodo = {
-        id: Date.now(),
-        checkStatus: false,
-        textValue: data
-    };
+saveTodo.addEventListener('click', () => {
+    todoList.saveTodoList();
+});
 
-    if(data != '') {
-        localStorage.setItem(timeId, JSON.stringify(singleTodo));
-        addTodoText.value = "";
-        addTodoText.focus();
-        getTodo(timeId);
-    }
+btnAll.addEventListener('click', () => {
+    todoList.allTodoTasks();
+    btnAll.classList.add('active');
+    btnAll.classList.remove('inActive');
+    btnActive.classList.remove('active');
+    btnActive.classList.add('inActive');
+    btnCompleted.classList.remove('active');
+    btnCompleted.classList.add('inActive');
+});
+
+btnActive.addEventListener('click', () => {
+    todoList.activeTodoTasks();
+    btnActive.classList.add('active');
+    btnActive.classList.remove('inActive');
+    btnAll.classList.remove('active');
+    btnAll.classList.add('inActive');
+    btnCompleted.classList.remove('active');
+    btnCompleted.classList.add('inActive');
+});
+
+btnCompleted.addEventListener('click', () => {
+    todoList.completedTodoTasks();
+    btnCompleted.classList.add('active');
+    btnCompleted.classList.remove('inActive');
+    btnAll.classList.remove('active');
+    btnAll.classList.add('inActive');
+    btnActive.classList.remove('active');
+    btnActive.classList.add('inActive');
 });

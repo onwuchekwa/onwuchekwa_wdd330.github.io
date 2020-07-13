@@ -35,10 +35,6 @@ h1 {
     list-style: none;
 }
 
-.checkbox-list, input[type="checkbox"] {
-    display: none;
-}
-
 form {
     bottom: 10px;
     display: flex;
@@ -49,7 +45,7 @@ form {
 
 input[type="text"] {
     border: 2px solid #222;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 15px;
     width: 85%;
     font-size: 1.2rem;
@@ -58,38 +54,30 @@ input[type="text"] {
 .btnAddTodo {
     background-color: transparent;
     border: 2px solid #222;
-    border-radius: 5px;
+    border-radius: 10px;
     font-size: 2rem;
     cursor: pointer;
     width: 13%;
 }
 
 .btnAll, .btnActive, .btnComplete {
-    background-color: transparent;
-    border: none;
     font-size: 0.95rem;
     cursor: pointer;
     padding: 15px;
     margin-bottom: 15px;
+    margin-right: 15px;
+    border-radius: 10px;
+    width: 100px;
 }
 
-.placeholder-list {
-    align-items: center;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
+.counter {
+    font-size: 0.95rem;
+    padding: 15px;
+    margin-bottom: 15px;
 }
 
 .checkbox-list, .title, .description {
     margin-bottom: 15px;
-}
-
-.todo-list:empty {
-    display: none;
-}
-
-.todo-list:empty + .placeholder-list {
-    display: flex;
 }
 
 .todo-filter {
@@ -97,10 +85,6 @@ input[type="text"] {
     justify-content: center;
     display: flex;
     flex-direction: row;
-}
-
-.todo-list:empty + .placeholder-list + .todo-filter {
-    display: none;
 }
 
 .item {
@@ -117,7 +101,7 @@ input[type="text"] {
     margin: 0 15px;
 }
 
-.tick {
+.checkBox {
     width: 30px;
     height: 30px;
     border: 3px solid #333;
@@ -128,18 +112,31 @@ input[type="text"] {
     cursor: pointer;
 }
 
-.tick::before {
-    content: '✓';
-    font-size: 20px;
-    display: none;
-}
-
-.delete {
+.deleteData {
     width: 30px;
     height: 30px;
-    border-radius: 50%;;
-    pointer-events: none;
+    border-radius: 50%;
     background-color: #f00;
     color: #fff;
     border: none;
-  }
+    cursor: pointer;
+}
+
+.strikeThrough {
+    text-decoration: line-through;
+    color: red;
+}
+
+.text {
+    cursor: pointer;
+}
+
+.active {
+    background-color: #000;
+    color: #fff;
+}
+
+.inActive {    
+    background-color: transparent;
+    border: 2px solid #000;
+}
