@@ -6,6 +6,7 @@ const newClassCode = getElementId("#newClassCode");
 const newClassName = getElementId("#newClassName");
 const editClassCode = getElementId("#editClassCode");
 const editClassName = getElementId("#editClassName");
+const editClass = getElementId("#editClass");
 const spHour = getElementId("#spHour");
 const spMinutes = getElementId("#spMinutes");
 const spSeconds = getElementId("#spSeconds");   
@@ -247,7 +248,7 @@ const getReportList = (reportList, element) => {
         reportList.forEach(reports => {
             const li = document.createElement('li');
             const studyDate = new Date(reports.studyDate).toLocaleDateString('en-US');
-            li.innerHTML = `<strong>Date of Study: ${studyDate}</strong><br> &emsp; Class Code: ${reports.classCode} <br> &emsp; Time Spend: ${reports.timeSpend}</a>`;
+            li.innerHTML = `<strong>Date of Study: ${studyDate}</strong><br> &emsp; Class Code: ${reports.classCode} <br> &emsp; Time Spent: ${reports.timeSpend}</a>`;
             element.appendChild(li);
         });
     } else {
@@ -273,6 +274,8 @@ const filterReport = (key, searchString) => {
 // Manage Class
 export class ManageClass {
     constructor(elementList, selList, rcdList, key) {
+        this.classDataId = null; 
+        this.classDataName = null;
         this.elementList = elementList;
         this.selList = selList;
         this.rcdList = rcdList;
@@ -280,7 +283,9 @@ export class ManageClass {
         if(getPageName == 'index.html') { 
             bindEvent("#addClass", this.newClass.bind(this));
             bindChangeEvent('#selectClass', this.populateEditClass.bind(this))
-            bindEvent("#editClass", this.ediClass.bind(this));
+            bindChangeEvent('#editClassCode', this.enableSaveChangesButton.bind(this))
+            bindChangeEvent('#editClassName', this.enableSaveChangesButton.bind(this))
+            bindEvent("#editClass", this.editClass.bind(this));
             this.classLists();
             this.selectEditLists();
             this.selectRecordLists();
@@ -319,10 +324,24 @@ export class ManageClass {
         const classId = filterClass(this.key, this.selList);
         editClassCode.value = classId.map(c => `${c.classCode}`)
         editClassName.value = classId.map(c => `${c.className}`)
+        this.classDataId = classId.map(c => `${c.classCode}`)
+        this.classDataName = classId.map(c => `${c.className}`)
+    }
+
+    enableSaveChangesButton() {
+        if(editClassCode.value != this.classDataId ||  editClassName.value != this.classDataName) {
+            if(editClass.disabled) {
+                editClass.removeAttribute('disabled');
+            }
+        } else {
+            if(!editClass.disabled) {
+                editClass.setAttribute('disabled', 'disabled');
+            }            
+        }
     }
 
     // Update local storage with new edit values
-    ediClass() {
+    editClass() {
         if (validateEditClass()) {
             const classId = getClasses(this.key);
             for(var i = 0; i < classId.length; i++) {  
@@ -334,6 +353,8 @@ export class ManageClass {
             addToLocalStorage(this.key, classId);
             editClassCode.value = ""; 
             editClassName.value = "";
+            classError.innerHTML = "";
+            classError.style.display = "none";
             this.classLists();
             this.selectEditLists();
             this.selectRecordLists();
