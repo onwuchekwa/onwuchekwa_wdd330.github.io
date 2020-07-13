@@ -161,6 +161,11 @@ legend {
     width: 45%;
 }
 
+.btnTimer[disabled], .btnDisabled[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+}
+
 .top input:required, .top select:required {
     border-left: 6px solid #a50404;
 }

@@ -405,7 +405,7 @@ export class ManageTimer {
         btnStop.setAttribute('disabled', 'disabled');
         btnPause.setAttribute('disabled', 'disabled');
         btnReset.setAttribute('disabled', 'disabled');
-        btnSave.setAttribute('disabled', 'disabled');
+        btnSave.removeAttribute('disabled');
     }
 
     // Add Timer to localStorage
