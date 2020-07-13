@@ -247,7 +247,7 @@ const getReportList = (reportList, element) => {
         reportList.forEach(reports => {
             const li = document.createElement('li');
             const studyDate = new Date(reports.studyDate).toLocaleDateString('en-US');
-            li.innerHTML = `Date of Study: ${studyDate}<br> &emsp; Class Code: ${reports.classCode} <br> &emsp; Time Spend: ${reports.timeSpend}</a>`;
+            li.innerHTML = `<strong>Date of Study: ${studyDate}</strong><br> &emsp; Class Code: ${reports.classCode} <br> &emsp; Time Spend: ${reports.timeSpend}</a>`;
             element.appendChild(li);
         });
     } else {
@@ -414,6 +414,7 @@ export class ManageTimer {
             const timeClass = getElementId("#timeClass"); 
             this.stopTimer(); 
             addTimer(timeClass.value, spHour.innerHTML, spMinutes.innerHTML, spSeconds.innerHTML, this.key);
+            timeClass.value = "";
             this.resetTimer();
         }
     }
