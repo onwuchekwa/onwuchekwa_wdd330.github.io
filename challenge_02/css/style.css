@@ -178,12 +178,21 @@ legend {
 }
 
 .view-class-list, .class-report {
-    margin: 10px 7%;
+    margin: 10px 5%;
+    list-style-type: none;
 }
 
-.view-class-list > li > a, .class-report > li {
-    text-decoration: none;
+.view-class-list > li, .class-report > li {
+    border-bottom: 2px solid #060972;
     padding: 7px;
+}
+
+.view-class-list > li:last-child, .class-report > li:last-child {
+    border-bottom: none;
+}
+
+.view-class-list > li > a {
+    text-decoration: none;
 }
 
 .view-class-list > li > a:hover {

@@ -355,6 +355,7 @@ export class ManageTimer {
             bindEvent("#btnReset", this.resetTimer.bind(this));
             bindEvent("#btnStop", this.stopTimer.bind(this));
             bindEvent("#btnSave", this.newTimer.bind(this));
+            this.reportLists();
         }
     }
 
@@ -369,7 +370,7 @@ export class ManageTimer {
             if (btnStart.innerHTML == 'Resume' || btnStart.innerHTML == 'Restart') {
                 btnStart.innerHTML = 'Start';
             }
-            btnStart.setAttribute('disabled', 'true');
+            btnStart.setAttribute('disabled', 'disabled');
             btnPause.removeAttribute('disabled');
             btnReset.removeAttribute('disabled');
             btnStop.removeAttribute('disabled');
@@ -381,7 +382,7 @@ export class ManageTimer {
     pauseTimer() {
         Timer.pause();
         btnStart.innerHTML = 'Resume';
-        btnPause.setAttribute('disabled', 'true');
+        btnPause.setAttribute('disabled', 'disabled');
         btnStart.removeAttribute('disabled');
     }
 
@@ -390,10 +391,10 @@ export class ManageTimer {
         Timer.reset();
         btnStart.innerHTML = 'Start';
         btnStart.removeAttribute('disabled');
-        btnPause.setAttribute('disabled', 'true');
-        btnReset.setAttribute('disabled', 'true');
-        btnStop.setAttribute('disabled', 'true');
-        btnSave.setAttribute('disabled', 'true');
+        btnPause.setAttribute('disabled', 'disabled');
+        btnReset.setAttribute('disabled', 'disabled');
+        btnStop.setAttribute('disabled', 'disabled');
+        btnSave.setAttribute('disabled', 'disabled');
     }
 
     // Stop TImer
@@ -401,10 +402,10 @@ export class ManageTimer {
         Timer.pause();
         btnStart.innerHTML = 'Restart';
         btnStart.removeAttribute('disabled');
-        btnStop.setAttribute('disabled', 'true');
-        btnPause.setAttribute('disabled', 'true');
-        btnReset.setAttribute('disabled', 'true');
-        btnSave.setAttribute('disabled', 'true');
+        btnStop.setAttribute('disabled', 'disabled');
+        btnPause.setAttribute('disabled', 'disabled');
+        btnReset.setAttribute('disabled', 'disabled');
+        btnSave.setAttribute('disabled', 'disabled');
     }
 
     // Add Timer to localStorage
