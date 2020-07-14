@@ -243,14 +243,34 @@ const addTimer = (classCode, mHour, mMinute, mSeconds, key) => {
 
 // Get List of Reports
 const getReportList = (reportList, element) => {
+    const dvReport = getElementId('#dvReport');
+    const padZero = (val) => {
+        return ("0" + val).slice(-2);
+    }
+
     element.innerHTML = "";
-    if(!timerArray.length <= 0) {        
+    let totalTimeSpent = null;
+    if(!timerArray.length <= 0) {    
         reportList.forEach(reports => {
             const li = document.createElement('li');
             const studyDate = new Date(reports.studyDate).toLocaleDateString('en-US');
             li.innerHTML = `<strong>Date of Study: ${studyDate}</strong><br> &emsp; Class Code: ${reports.classCode} <br> &emsp; Time Spent: ${reports.timeSpend}</a>`;
             element.appendChild(li);
+
+            const studyTime = reports.timeSpend.split(":");
+            const hr = parseInt(studyTime[0], 10);
+            const min = parseInt(studyTime[1], 10);
+            const sec = parseInt(studyTime[2], 10);
+            const totalSeconds = sec + (60 * min) + (60 * 60 * hr);
+            totalTimeSpent += totalSeconds;
         });
+        const hour = Math.floor(totalTimeSpent / 3600);
+        totalTimeSpent %= 3600;
+        const minute = Math.floor(totalTimeSpent / 60);
+        const second = totalTimeSpent % 60; 
+        dvReport.innerHTML += "<hr class='pinkLine'>";     
+        dvReport.innerHTML += "<span class='cls'><strong>Total Time Spent: &emsp;" + padZero(hour) + ":" + padZero(minute) + ":" + padZero(second) + "</strong></span>";
+        dvReport.innerHTML += "<hr class='pinkLine'>";
     } else {
         element.innerHTML = "<li class='emptyClass'>You have not added any reports</li>";
     }
