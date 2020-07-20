@@ -373,8 +373,6 @@ export class ManageClass {
             addToLocalStorage(this.key, classId);
             editClassCode.value = ""; 
             editClassName.value = "";
-            classError.innerHTML = "";
-            classError.style.display = "none";
             this.classLists();
             this.selectEditLists();
             this.selectRecordLists();
