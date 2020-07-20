@@ -31,12 +31,12 @@
                                 <label class="top" for="newClassCode">
                                     Class Code <span class="required">*</span>
                                     <input type="text" name="newClassCode" id="newClassCode" required placeholder="Enter Your Class Code" class="newClass">
-                                    <div class="classMessage">Class code is mandatory</div>
+                                    <span class="classMessage">Class code is mandatory</span>
                                 </label>
                                 <label class="top" for="newClassName">
                                     Class Name <span class="required">*</span>
                                     <input type="text" name="newClassName" id="newClassName" required placeholder="Enter Your Class Name" class="newClass">
-                                    <div class="classMessage">Class name is mandatory</div>
+                                    <span class="classMessage">Class name is mandatory</span>
                                 </label>                                                          
                             </fieldset>                            
                             <button type="button" class="btnStyle" id="addClass" name="addClass">Add my Class</button>
@@ -52,7 +52,7 @@
                                 <label class="top" for="timeClass">
                                     Classes <span class="required">*</span>
                                     <select id="timeClass" required></select>
-                                    <div class="timeMessage">You must select class code</div>                        
+                                    <span class="timeMessage">You must select class code</span>                        
                                 </label>
                             </fieldset>
                             <fieldset>
@@ -61,9 +61,9 @@
                                 <button type="button" class="btnTimer" id="btnPause" disabled>Pause</button>
                                 <button type="button" class="btnTimer" id="btnReset" disabled>Reset</button>
                                 <button type="button" class="btnTimer" id="btnStop" disabled>Stop</button>
-                                <label class="sbs" for="studyTimer">
+                                <label class="sbs">
                                     <span id="spHour" class="timerTicker">00</span>:<span id="spMinutes" class="timerTicker">00</span>:<span id="spSeconds" class="timerTicker">00</span>
-                                    <div class="timeMessage" id="dvTimer">You must start timer first</div>
+                                    <span class="timeMessage" id="dvTimer">You must start timer first</span>
                                 </label>                                
                             </fieldset>                                                       
                             <button type="button" class="btnStyle btnDisabled" id="btnSave" disabled>Save my Study Time</button>
@@ -79,7 +79,7 @@
                                 <label class="top" for="selectClass">
                                     Classes <span class="required">*</span>
                                     <select id="selectClass" required></select>
-                                    <div class="editMessage">You must select class code</div>  
+                                    <span class="editMessage">You must select class code</span>  
                                 </label>
                             </fieldset>
                             <fieldset id="editClassDetails">
@@ -87,12 +87,12 @@
                                 <label class="top" for="editClassCode">
                                     Class Code <span class="required">*</span>
                                     <input type="text" name="editClassCode" id="editClassCode" required placeholder="Enter Your Class Code">     
-                                    <div class="editMessage">Class code is mandatory</div>                   
+                                    <span class="editMessage">Class code is mandatory</span>                   
                                 </label>
                                 <label class="top" for="editClassName">
                                     Class Name <span class="required">*</span>
                                     <input type="text" name="editClassName" id="editClassName" required placeholder="Enter Your Class Name">
-                                    <div class="editMessage">Class name is mandatory</div>
+                                    <span class="editMessage">Class name is mandatory</span>
                                 </label>                                                          
                             </fieldset>                            
                             <button type="button" class="btnStyle btnDisabled" id="editClass" name="editClass" disabled>Save my Changes</button>

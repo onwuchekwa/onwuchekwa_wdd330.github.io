@@ -150,13 +150,6 @@ legend {
     color: rgba(189, 59, 189, 0.667);
 }
 
-.classMessage, .editMessage, .timeMessage {
-    font-size: 0.8rem;
-    text-align: left;
-    color: #a50404;
-    display: none;
-}
-
 .top {
     display: block;
     padding: 0.5rem;
@@ -177,6 +170,12 @@ legend {
 
 .top span {
     color: #a50404;
+}
+
+.classMessage, .editMessage, .timeMessage {
+    font-size: 0.8rem;
+    text-align: left;
+    display: none;
 }
 
 .sbs {
